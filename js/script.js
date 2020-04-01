@@ -16,25 +16,23 @@ const showPage = (list, display) => {
   list= itemsPerPage;
   studentsPerPage = 10
   pagesPerStudents = itemsPerPage / 10;
-
   for (let i = 0; i < list.length; i++) {
     if (i >= studentsPerPage) {
       list[i].style.dipslay = "none";
     }
   }
+  return showPage
 };
 console.log (showPage)
-
-
-
-
-
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
+const appendPageLinks = (list) => {
+  
 
+}
 
 
 
