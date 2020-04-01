@@ -12,17 +12,18 @@ const itemsPerPage = 10; //limits the amount of items that will appear on the pa
    
 //Display Page Function
 
-const showPage = (list, page) => {
-  let startIndex = (page * itemsPerPage) - itemsPerPage;
-  let endIndex = (page * itemsPerPage)
-  
-  for (let i=1; i<list.length; i+=1){
-    if (list[i] >= startIndex && list [i] <= endIndex)
-      list [i].style.display = '';
-  } else{
-    list[i].style.display = 'none';
+const showPage = (list, display) => {
+  list= itemsPerPage;
+  studentsPerPage = 10
+  pagesPerStudents = itemsPerPage / 10;
+
+  for (let i = 0; i < list.length; i++) {
+    if (i >= studentsPerPage) {
+      list[i].style.dipslay = "none";
+    }
   }
 };
+console.log (showPage)
 
 
 
