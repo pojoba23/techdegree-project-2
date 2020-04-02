@@ -9,6 +9,8 @@ Powell Barrett
 const studentsList = document.querySelectorAll("li"); //targets all the li's on the page.
 
 const studentsPerPage = 10; //limits the amount of items that will appear on the page to 10.
+
+let pageNumber = 0
    
 //Display Page Function
 
@@ -30,6 +32,24 @@ const showPage = (list, page) => {
 ***/
 
 const appendPageLinks = (list) => {
-
-
+  const pageCount = list.length / studentsPerPage;
+  const page = document.getElementsByClassName("page") [0];
+  const wrapper = document.createElement("ul");
+  const div = document.createElement("div");
+  div.classList.add ("pagination");
+  page.appendChild (div);
+  div.appendChild (wrapper);
+  for (let i = 0; i < pageCount; i++) {
+    const item = document.createElement ("li");
+    wrapper.appendChild(item)
+    const a = document.createElement ("a")
+    a.innerHTML = i+1
+    item.appendChild(a)
+    a.addEventListener("click" ,() => {
+      pageNumber = i
+      showPage (list, pageNumber)
+    })
+  }
+  
 }
+appendPageLinks(studentsList);
