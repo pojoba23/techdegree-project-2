@@ -19,9 +19,9 @@ const showPage = (list, page) => {
   const endIndex = (page * studentsPerPage) - 1;
   for (let i = 0; i < list.length; i++) {
     if (i >= startIndex && i <= endIndex) {
-      list[i].style.dipslay = "";
+      list[i].style.display = "";
     } else {
-      list[i].style.diplay = 'none';
+      list[i].style.display = 'none';
     }
   }
 };
