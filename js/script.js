@@ -10,11 +10,11 @@ const studentsList = document.querySelectorAll("li"); //targets all the li's on 
 
 const studentsPerPage = 10; //limits the amount of items that will appear on the page to 10.
 
-let pageNumber = 0
+let pageNumber = 1
    
 //Display Page Function
 
-const showPage = (list, page) => {
+const showPage = (list, page, studentsList) => {
   const startIndex= (page * studentsPerPage) - studentsPerPage;
   const endIndex = (page * studentsPerPage) - 1;
   for (let i = 0; i < list.length; i++) {
@@ -46,10 +46,13 @@ const appendPageLinks = (list) => {
     a.innerHTML = i+1
     item.appendChild(a)
     a.addEventListener("click" ,() => {
-      pageNumber = i
+      pageNumber = i+1
       showPage (list, pageNumber)
     })
   }
   
 }
+showPage(studentsList, pageNumber);
 appendPageLinks(studentsList);
+
+
